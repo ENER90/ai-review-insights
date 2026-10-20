@@ -1,0 +1,132 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "insights": {
+      "title": "Product insights",
+      "transformation": {
+        "fields": [
+          "type",
+          "product",
+          "reviewsAnalyzed",
+          "averageRating5",
+          "sentiment",
+          "summary",
+          "pros",
+          "cons",
+          "featureRequests"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "product": {
+            "label": "Product"
+          },
+          "reviewsAnalyzed": {
+            "label": "Reviews",
+            "format": "number"
+          },
+          "averageRating5": {
+            "label": "Avg \u2605 (5)",
+            "format": "number"
+          },
+          "sentiment": {
+            "label": "Sentiment",
+            "format": "object"
+          },
+          "summary": {
+            "label": "Summary"
+          },
+          "pros": {
+            "label": "Top pros",
+            "format": "array"
+          },
+          "cons": {
+            "label": "Top cons",
+            "format": "array"
+          },
+          "featureRequests": {
+            "label": "Feature requests",
+            "format": "array"
+          }
+        }
+      }
+    },
+    "themes": {
+      "title": "Themes & quotes",
+      "transformation": {
+        "fields": [
+          "type",
+          "product",
+          "themes",
+          "notableQuotes",
+          "model",
+          "language"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "product": {
+            "label": "Product"
+          },
+          "themes": {
+            "label": "Themes",
+            "format": "array"
+          },
+          "notableQuotes": {
+            "label": "Quotes",
+            "format": "array"
+          },
+          "model": {
+            "label": "Model"
+          },
+          "language": {
+            "label": "Language"
+          }
+        }
+      }
+    },
+    "reviews": {
+      "title": "Sentiment per review",
+      "transformation": {
+        "fields": [
+          "type",
+          "product",
+          "rating",
+          "sentiment",
+          "score",
+          "topics",
+          "text"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "product": {
+            "label": "Product"
+          },
+          "rating": {
+            "label": "Rating",
+            "format": "number"
+          },
+          "sentiment": {
+            "label": "Sentiment"
+          },
+          "score": {
+            "label": "Score",
+            "format": "number"
+          },
+          "topics": {
+            "label": "Topics",
+            "format": "array"
+          },
+          "text": {
+            "label": "Review"
+          }
+        }
+      }
+    }
+  }
+}

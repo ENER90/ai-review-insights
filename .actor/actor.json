@@ -1,0 +1,16 @@
+{
+  "actorSpecification": 1,
+  "name": "ai-review-insights",
+  "title": "AI Review Insights \u2013 Sentiment, Pros & Cons, Feature Requests",
+  "description": "Turn reviews into AI insights (Gemini or OpenAI, your own key): sentiment per review, top pros & cons, themes, feature requests and a summary per product, in any language. Works with any Apify review dataset (G2, Trustpilot, Walmart, Amazon, Mercado Libre) or JSON.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "dockerfile": "./Dockerfile",
+  "output": "./output_schema.json",
+  "readme": "./STORE_README.md",
+  "changelog": "../CHANGELOG.md"
+}

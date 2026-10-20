@@ -1,0 +1,121 @@
+{
+  "title": "AI Review Insights",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "datasetIds": {
+      "title": "Apify dataset IDs with reviews",
+      "type": "array",
+      "description": "IDs of datasets produced by any review scraper (Trustpilot, G2, Capterra, TrustRadius, Walmart, Amazon, Google Maps, Mercado Libre...). Rows without review text (e.g. product rows) are skipped automatically.",
+      "resourceType": "dataset",
+      "editor": "resourcePicker",
+      "resourcePermissions": [
+        "READ"
+      ]
+    },
+    "jsonUrls": {
+      "title": "JSON URLs",
+      "type": "array",
+      "editor": "stringList",
+      "description": "Public URLs returning a JSON array of reviews (e.g. an Apify dataset items URL).",
+      "default": []
+    },
+    "reviews": {
+      "title": "Reviews (inline)",
+      "type": "array",
+      "editor": "json",
+      "description": "Reviews as strings or objects with `text` (and optional `productName`, `rating`).",
+      "prefill": [
+        "Great battery life, but the camera is mediocre.",
+        "Shipping took 3 weeks. Please add a dark mode to the app!",
+        "Excellent value for money, would buy again."
+      ]
+    },
+    "llmProvider": {
+      "title": "AI provider",
+      "type": "string",
+      "enum": [
+        "gemini",
+        "openai"
+      ],
+      "enumTitles": [
+        "Google Gemini (free tier available)",
+        "OpenAI"
+      ],
+      "default": "gemini",
+      "description": "Which AI provider to use with your own API key."
+    },
+    "apiKey": {
+      "title": "Your AI API key",
+      "type": "string",
+      "isSecret": true,
+      "editor": "textfield",
+      "description": "Your Gemini key (free at https://aistudio.google.com/apikey) or OpenAI key. It is stored encrypted and only used for this run. AI usage is billed by your provider, not by this actor."
+    },
+    "model": {
+      "title": "Model",
+      "type": "string",
+      "editor": "textfield",
+      "description": "Leave empty for a fast, cheap default: gemini-3.1-flash-lite or gpt-4.1-mini."
+    },
+    "outputLanguage": {
+      "title": "Output language",
+      "type": "string",
+      "editor": "textfield",
+      "default": "English",
+      "description": "Language for summaries, pros/cons and themes (e.g. English, Spanish, Portuguese, German). Reviews can be in any language."
+    },
+    "groupBy": {
+      "title": "Group insights by",
+      "type": "string",
+      "enum": [
+        "product",
+        "none"
+      ],
+      "enumTitles": [
+        "Product (one insight per product)",
+        "None (one insight for all reviews)"
+      ],
+      "default": "product",
+      "description": "One insight per product, or one for all reviews together."
+    },
+    "perReviewSentiment": {
+      "title": "Output sentiment per review",
+      "type": "boolean",
+      "default": true,
+      "description": "Also output one row per review with sentiment, score and topics."
+    },
+    "maxReviewsPerProduct": {
+      "title": "Max reviews per product",
+      "type": "integer",
+      "minimum": 1,
+      "default": 500,
+      "description": "Analyze at most this many reviews per product."
+    },
+    "maxReviews": {
+      "title": "Max reviews in total",
+      "type": "integer",
+      "minimum": 1,
+      "default": 2000,
+      "description": "Analyze at most this many reviews in total."
+    },
+    "batchSize": {
+      "title": "Reviews per AI request",
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 80,
+      "default": 30,
+      "sectionCaption": "Advanced",
+      "description": "How many reviews go in each AI request. Larger = fewer requests."
+    },
+    "concurrency": {
+      "title": "Parallel AI requests",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 8,
+      "default": 2,
+      "description": "Keep 1\u20132 on free-tier keys to avoid rate limits (429 errors are retried automatically)."
+    }
+  },
+  "required": []
+}

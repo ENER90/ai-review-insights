@@ -1,0 +1,9 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Output",
+  "properties": {
+    "insights": { "type": "string", "title": "Product insights", "template": "{{links.apiDefaultDatasetUrl}}/items?view=insights" },
+    "reviews": { "type": "string", "title": "Sentiment per review", "template": "{{links.apiDefaultDatasetUrl}}/items?view=reviews" },
+    "stats": { "type": "string", "title": "Run stats (AI tokens used)", "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/RUN_STATS" }
+  }
+}

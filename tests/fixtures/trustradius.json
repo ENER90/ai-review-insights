@@ -1,0 +1,151 @@
+[{
+  "type": "product",
+  "source": "trustradius",
+  "productSlug": "slack",
+  "productName": "Slack",
+  "url": "https://www.trustradius.com/products/slack/reviews",
+  "ratingValue": 9,
+  "ratingScale": 10,
+  "reviewCount": 10271,
+  "description": "Slack is a group messaging or team collaboration app that aims to simplify communication for businesses. Features include open discussions, private groups, and direct messaging, as well as deep contextual search and message archiving, and file sharing. Slack integrates with a number of other tools, such as MailChimp, Dropbox, and Google Drive. Slack was acquired by Salesforce in December 2020. The product is free to use, and also has paid plans with more features and greater controls. The company has raised $340M in funding and boasts 800k users.",
+  "scrapedAt": "2026-10-20T00:42:29.137Z"
+},
+{
+  "type": "review",
+  "source": "trustradius",
+  "productSlug": "slack",
+  "productName": "Slack",
+  "reviewId": "slack-2026-08-05-00-29-43",
+  "reviewUrl": "https://www.trustradius.com/reviews/slack-2026-08-05-00-29-43",
+  "title": "Well Organized and Easy to Manage",
+  "rating": 9,
+  "ratingScale": 10,
+  "ratingNormalized5": 4.5,
+  "date": "2026-08-10T16:20:28.250Z",
+  "reviewSource": null,
+  "vetted": true,
+  "useCases": "My team uses Slack every day for communication between developer, teaster, manager, QA. Instead of sending emails for every small updates, we share messages in different channels based on projects. we also use it to discuss bugs, deployment updates, and quick questions during development. Slack helps us keep conversations organized and reduces delay because everyone can see the latest updates in one place. it has made teamwork fatser, especially when project are working from different locations.",
+  "pros": [
+    "Keep project discussions organized with separate channels.",
+    "Quick direct messages help solve small issues without long meetings.",
+    "simple interface, so new team member can start using it quickly.",
+    "Works smoothly on both desktop and mobile."
+  ],
+  "cons": [
+    "Too many notification can be distracting, even with notifications setting.",
+    "confusing notifications setting, It pause when working hours end because of that i missed imp message after working hours."
+  ],
+  "likelihoodToRecommend": "Slack works very well for daily team communications, project discussions, bug tracking and sharing quick updates.for long documents, formal approvals, or detailed project planning, we usually use other tools because those tasks are easier to manage out side chat.",
+  "otherSections": {},
+  "scrapedAt": "2026-10-20T00:42:29.137Z"
+},
+{
+  "type": "review",
+  "source": "trustradius",
+  "productSlug": "slack",
+  "productName": "Slack",
+  "reviewId": "slack-2026-07-16-16-45-55",
+  "reviewUrl": "https://www.trustradius.com/reviews/slack-2026-07-16-16-45-55",
+  "title": "Slack Streamlines QA Collaboration and Accelerates Software Delivery.",
+  "rating": 9,
+  "ratingScale": 10,
+  "ratingNormalized5": 4.5,
+  "date": "2026-07-17T14:08:52.141Z",
+  "reviewSource": null,
+  "vetted": true,
+  "useCases": "We use Slack to communicate testing schedules, release readiness, regression testing progress, and deployment timelines with developers and project stakeholders. Slack enables quick discussions with developers, DevOps engineers, business analysts, and product owners to clarify requirements, reproduce defects, and validate fixes.",
+  "pros": [
+    "Slack provides instant messaging that allows QA Analysts, developers, and DevOps engineers to resolve issues much faster than email.",
+    "Slack workflows automate repetitive tasks such as collecting daily QA status updates, reporting release readiness, or notifying stakeholders when testing milestones are completed."
+  ],
+  "cons": [
+    "While Slack is excellent for communication, it is not designed to manage test cases, track defects, or plan sprints."
+  ],
+  "likelihoodToRecommend": "Slack is ideal for Scrum and agile teams that need continuous communication during sprint planning, daily stand-ups, backlog refinement, testing, and retrospectives. Slack is well-suited for maintaining team knowledge through searchable conversations and dedicated channels, where experienced team members help onboard new QA analysts.",
+  "otherSections": {},
+  "scrapedAt": "2026-10-20T00:42:29.137Z"
+},
+{
+  "type": "review",
+  "source": "trustradius",
+  "productSlug": "slack",
+  "productName": "Slack",
+  "reviewId": "slack-2026-06-14-06-12-46",
+  "reviewUrl": "https://www.trustradius.com/reviews/slack-2026-06-14-06-12-46",
+  "title": "Ultimate Collaboration Hub for Modern Teams",
+  "rating": 9,
+  "ratingScale": 10,
+  "ratingNormalized5": 4.5,
+  "date": "2026-06-24T02:54:10.727Z",
+  "reviewSource": null,
+  "vetted": true,
+  "useCases": "Slack is deployed across our company as a default messaging and collaboration tool. It serves the following use cases. 1. direction communication with any employee. 2. Slack channels to communicate with the product team. Channels are used heavily in our organization for work and fun related activities. 3. Slack is also used across products / teams. for e.g. communication at engineering organization as well as at company level messaging.",
+  "pros": [
+    "Customer issues: Threads feature allows us to group a particular issue in a single thread and discuss within that thread. I can use the thread link to embed in JIRA ticket for tracking progress in JIRA (which is our details engineering tracking system).",
+    "Ability to add folder to Slack channel helps keep important information, documents easily accessible. e.g., we use this to keep a \"ramp up\" folder that can be used by any new joiner.",
+    "Global search is effective when I forget which group a particular message was in."
+  ],
+  "cons": [
+    "I cannot create a group of more then 9 people and there is not easy way to convert that group to a channel. This is typically the journey, you start with a small group but then for some groups it makes sense to convert to a channel to allow more people to participate.",
+    "I am not happy with alerting or unread messages. Threads is a weak link here. Any discussion here is not indicated in some prominent way. I have to go to the \"threads\" link at the top to view all the unread messages. I often visit the threads channel only couple of times a day and I end up missing some time sensitive questions.",
+    "The alert pop up is transient, so I often miss alerts that are important to be replied quickly.",
+    "Quality of huddle is pretty bad especially for videos. It forces us to go on Zoom even for a 1-1 huddle that can be easily done in Slack."
+  ],
+  "likelihoodToRecommend": "Slack suites well for multiple scenarios. (1) table stacks 1-1 and group conversations. (2) Level of integrations with external systems like, Confluence, Google Docs, JIRA, etc. (3) Nice integration with Claude allows lots of automation possible. (4) Allows external people (outside the company) to participate. This is great for direct customer interactions.",
+  "otherSections": {},
+  "scrapedAt": "2026-10-20T00:42:29.137Z"
+},
+{
+  "type": "review",
+  "source": "trustradius",
+  "productSlug": "slack",
+  "productName": "Slack",
+  "reviewId": "slack-2026-05-05-23-51-38",
+  "reviewUrl": "https://www.trustradius.com/reviews/slack-2026-05-05-23-51-38",
+  "title": "Slack Review",
+  "rating": 10,
+  "ratingScale": 10,
+  "ratingNormalized5": 5,
+  "date": "2026-05-12T01:30:29.251Z",
+  "reviewSource": "Incentivized",
+  "vetted": true,
+  "useCases": "So we use it for daily collaboration, just notifications for different things that happen. We're solely building out automation in Slack. We integrated it from Salesforce so that when something happens in Salesforce, we want to notify the users in Slack and send our automated reminders. That's what we're using it for.",
+  "pros": [
+    "I think it's the whole collaborative feature, and now with Slack coming into Salesforce and Salesforce being able to be seen from Slack, I think it's going to be amazing."
+  ],
+  "cons": [
+    "I can't think of anything right now"
+  ],
+  "likelihoodToRecommend": "I think it's well suited when with the whole remote culture. With a lot of people being remote, you can just collaborate. You can join a huddle seamlessly from your phone. And I think with technology and Slack, I think it's just easier and smoother operations.",
+  "otherSections": {},
+  "scrapedAt": "2026-10-20T00:42:29.137Z"
+},
+{
+  "type": "review",
+  "source": "trustradius",
+  "productSlug": "slack",
+  "productName": "Slack",
+  "reviewId": "slack-2026-01-03-10-45-31",
+  "reviewUrl": "https://www.trustradius.com/reviews/slack-2026-01-03-10-45-31",
+  "title": "Great app for collaboration",
+  "rating": 10,
+  "ratingScale": 10,
+  "ratingNormalized5": 5,
+  "date": "2026-01-11T04:33:16.995Z",
+  "reviewSource": null,
+  "vetted": true,
+  "useCases": "1. Automated workflows and audit trails 2. Convenient way to collaborate and keep a simplified runbook through canvas for the team's access 3. Keeping in touch with teammates located in different timezones. 4. Community channels allows for a more informal way to communicate with everyone in the firm - as a chatline about upcoming internal company events, early bird sales to external events, lost & found, etc.",
+  "pros": [
+    "Automated workflows",
+    "Collaboration",
+    "Private and public channels",
+    "Application linkage"
+  ],
+  "cons": [
+    "Ctrl + K being allowed to be the \"link\" or URL function would be great and very in line with other softwares/web browsers",
+    "Customized ordering of starred conversations"
+  ],
+  "likelihoodToRecommend": "Slack is well suited with it's ability to connect with external applications. Our team uses this to link / preview external documents (such as Google Docs) on our canvas. This is especially useful for us collating ideas or building up the runbook which requires us to link to the documents of other teams' due to linked processes.",
+  "otherSections": {},
+  "scrapedAt": "2026-10-20T00:42:29.137Z"
+}]
