@@ -12,5 +12,7 @@
   "dockerfile": "./Dockerfile",
   "output": "./output_schema.json",
   "readme": "./STORE_README.md",
-  "changelog": "../CHANGELOG.md"
+  "changelog": "../CHANGELOG.md",
+  "defaultMemoryMbytes": 512,
+  "maxMemoryMbytes": 2048
 }
