@@ -1,5 +1,5 @@
 import { Actor, log } from 'apify';
-import { normalizeReview, groupByProduct, chunk, batchPrompt, reducePrompt, parseJson, buildInsight, Review } from './core.js';
+import { dedupe, normalizeReview, groupByProduct, chunk, batchPrompt, reducePrompt, parseJson, buildInsight, Review } from './core.js';
 import { LlmClient } from './llm.js';
 
 interface Input {
@@ -34,7 +34,9 @@ for (const url of input.jsonUrls ?? []) {
   const r = await fetch(url, { signal: AbortSignal.timeout(60000) }); if (!r.ok) throw new Error(`Could not download ${url}: HTTP ${r.status}`);
   const j: any = await r.json(); raw.push(...(Array.isArray(j) ? j : j.items ?? j.reviews ?? [j]));
 }
-let reviews = raw.map((x, i) => normalizeReview(x, i)).filter((x): x is Review => !!x).slice(0, maxReviews);
+const all = raw.map((x, i) => normalizeReview(x, i)).filter((x): x is Review => !!x);
+const reviews = dedupe(all).slice(0, maxReviews);
+if (all.length > reviews.length) log.info(`Removed ${all.length - reviews.length} duplicate reviews.`);
 if (!reviews.length) throw new Error('Input error: no reviews found. Provide "datasetIds", "jsonUrls" or "reviews" (items with a text/review field).');
 const groups = [...groupByProduct(reviews, input.groupBy ?? 'product')].map(([k, v]) => [k, v.slice(0, maxPerProduct)] as const);
 log.info(`${reviews.length} reviews, ${groups.length} product(s). Model ${provider}/${model}, language ${language}.`);

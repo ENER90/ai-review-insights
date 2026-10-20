@@ -45,7 +45,7 @@ Return ONLY JSON with this shape:
 "pros":[{"point":"short","mentions":<count of reviews>}],"cons":[{"point":"short","mentions":<n>}],
 "themes":[{"theme":"short","sentiment":"positive|mixed|negative","mentions":<n>}],
 "featureRequests":[{"request":"short","mentions":<n>}],"notableQuotes":["<=25 words, verbatim"],"summary":"2-3 sentences"}
-Merge duplicates, max 8 items per list, count mentions honestly.
+${perReview ? `The "reviews" array MUST contain exactly ${batch.length} entries, one for EVERY index 0..${batch.length - 1}. ` : ''}In pros, cons, themes and featureRequests merge duplicates, keep max 8 items each, count mentions honestly.
 REVIEWS:
 ${lines.join('\n')}`;
 }
@@ -81,4 +81,10 @@ export function buildInsight(product: string, reviews: Review[], sentiments: { s
     featureRequests: top(llm?.featureRequests, 'request'), notableQuotes: (llm?.notableQuotes ?? []).slice(0, 5),
     language: meta.language, model: meta.model, analyzedAt: new Date().toISOString(),
   };
+}
+
+/** Drop duplicate reviews (same product + id, or same product + text). */
+export function dedupe(reviews: Review[]): Review[] {
+  const seen = new Set<string>();
+  return reviews.filter((r) => { const k1 = `${r.product}|id|${r.id}`, k2 = `${r.product}|tx|${r.text}`; if (seen.has(k1) || seen.has(k2)) return false; seen.add(k1); seen.add(k2); return true; });
 }

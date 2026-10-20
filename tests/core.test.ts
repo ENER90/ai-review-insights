@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { normalizeReview, groupByProduct, chunk, parseJson, buildInsight, batchPrompt } from '../src/core.js';
+import { dedupe, normalizeReview, groupByProduct, chunk, parseJson, buildInsight, batchPrompt } from '../src/core.js';
 const fx = (n: string) => JSON.parse(readFileSync(new URL(`./fixtures/${n}.json`, import.meta.url), 'utf8'));
 const norm = (a: any[]) => a.map((x, i) => normalizeReview(x, i)).filter(Boolean) as any[];
 
@@ -20,3 +20,4 @@ describe('helpers', () => {
     expect(ins.averageRating5).toBe(4.5); expect(ins.sentiment?.positivePct).toBe(50); expect(ins.pros[0].point).toBe('y');
   });
 });
+describe('dedupe', () => { it('removes repeated reviews', () => { const r = norm([{ type: 'review', productName: 'A', reviewId: 1, text: 'x' }, { type: 'review', productName: 'A', reviewId: 1, text: 'x' }, { type: 'review', productName: 'A', reviewId: 2, text: 'x' }, { type: 'review', productName: 'B', reviewId: 1, text: 'x' }]); expect(dedupe(r)).toHaveLength(2); }); });
