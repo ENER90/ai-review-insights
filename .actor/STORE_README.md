@@ -2,6 +2,10 @@
 
 Scraping reviews is easy. Reading 2,000 of them isn't. Point this Actor at a dataset of reviews (from my scrapers, someone else's, or your own JSON) and it gives you sentiment per review plus one summary per product: top pros and cons with how often they come up, themes, feature requests and real quotes. It runs on your own Gemini or OpenAI key.
 
+If you'd rather see it in action first, I recorded a short video tutorial:
+
+https://www.youtube.com/watch?v=qcq8EpkQuYU
+
 ![Input form with a dataset of Walmart reviews](https://raw.githubusercontent.com/ENER90/ai-review-insights/main/docs/screenshots/01-input.png)
 
 ## What you get
