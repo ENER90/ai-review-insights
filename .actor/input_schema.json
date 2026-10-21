@@ -11,6 +11,9 @@
       "editor": "resourcePicker",
       "resourcePermissions": [
         "READ"
+      ],
+      "example": [
+        "vocdGQlze4PYPNQ1A"
       ]
     },
     "jsonUrls": {
@@ -18,7 +21,8 @@
       "type": "array",
       "editor": "stringList",
       "description": "Public URLs returning a JSON array of reviews (e.g. an Apify dataset items URL).",
-      "default": []
+      "default": [],
+      "prefill": []
     },
     "reviews": {
       "title": "Reviews (inline)",
@@ -43,7 +47,8 @@
         "OpenAI"
       ],
       "default": "gemini",
-      "description": "Which AI provider to use with your own API key."
+      "description": "Which AI provider to use with your own API key.",
+      "prefill": "gemini"
     },
     "apiKey": {
       "title": "Your AI API key",
@@ -56,14 +61,16 @@
       "title": "Model",
       "type": "string",
       "editor": "textfield",
-      "description": "Leave empty for a fast, cheap default: gemini-3.1-flash-lite or gpt-4.1-mini."
+      "description": "Leave empty for a fast, cheap default: gemini-3.1-flash-lite or gpt-4.1-mini.",
+      "example": "gemini-3.1-flash-lite"
     },
     "outputLanguage": {
       "title": "Output language",
       "type": "string",
       "editor": "textfield",
       "default": "English",
-      "description": "Language for summaries, pros/cons and themes (e.g. English, Spanish, Portuguese, German). Reviews can be in any language."
+      "description": "Language for summaries, pros/cons and themes (e.g. English, Spanish, Portuguese, German). Reviews can be in any language.",
+      "prefill": "English"
     },
     "groupBy": {
       "title": "Group insights by",
@@ -77,27 +84,31 @@
         "None (one insight for all reviews)"
       ],
       "default": "product",
-      "description": "One insight per product, or one for all reviews together."
+      "description": "One insight per product, or one for all reviews together.",
+      "prefill": "product"
     },
     "perReviewSentiment": {
       "title": "Output sentiment per review",
       "type": "boolean",
       "default": true,
-      "description": "Also output one row per review with sentiment, score and topics."
+      "description": "Also output one row per review with sentiment, score and topics.",
+      "prefill": true
     },
     "maxReviewsPerProduct": {
       "title": "Max reviews per product",
       "type": "integer",
       "minimum": 1,
       "default": 500,
-      "description": "Analyze at most this many reviews per product."
+      "description": "Analyze at most this many reviews per product.",
+      "prefill": 500
     },
     "maxReviews": {
       "title": "Max reviews in total",
       "type": "integer",
       "minimum": 1,
       "default": 2000,
-      "description": "Analyze at most this many reviews in total."
+      "description": "Analyze at most this many reviews in total.",
+      "prefill": 2000
     },
     "batchSize": {
       "title": "Reviews per AI request",
@@ -106,7 +117,8 @@
       "maximum": 80,
       "default": 30,
       "sectionCaption": "Advanced",
-      "description": "How many reviews go in each AI request. Larger = fewer requests."
+      "description": "How many reviews go in each AI request. Larger = fewer requests.",
+      "prefill": 30
     },
     "concurrency": {
       "title": "Parallel AI requests",
@@ -114,8 +126,10 @@
       "minimum": 1,
       "maximum": 8,
       "default": 2,
-      "description": "Keep 1\u20132 on free-tier keys to avoid rate limits (429 errors are retried automatically)."
+      "description": "Keep 1–2 on free-tier keys to avoid rate limits (429 errors are retried automatically).",
+      "prefill": 2
     }
   },
-  "required": []
+  "required": [],
+  "description": "Pick a dataset of reviews (or paste JSON URLs or reviews), add your own Gemini or OpenAI key and click Start."
 }
