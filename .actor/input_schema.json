@@ -130,6 +130,6 @@
       "prefill": 2
     }
   },
-  "required": [],
+  "required": ["apiKey"],
   "description": "Pick a dataset of reviews (or paste JSON URLs or reviews), add your own Gemini or OpenAI key and click Start."
 }
