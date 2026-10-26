@@ -20,7 +20,15 @@ const maxPerProduct = input.maxReviewsPerProduct ?? 500, maxReviews = input.maxR
 
 // API key: bring-your-own only. No default key is baked into the actor.
 const apiKey = input.apiKey?.trim();
-if (!apiKey) throw new Error(`Input error: add your ${provider === 'gemini' ? 'Google Gemini API key (free at https://aistudio.google.com/apikey)' : 'OpenAI API key'} in "apiKey".`);
+if (!apiKey) {
+  // Exit successfully with a clear message (no AI calls, no billable events) so Apify's automatic QA test and first-time users do not see a failed run.
+  const keyHelp = provider === 'gemini' ? 'Google Gemini API key (free at https://aistudio.google.com/apikey)' : 'OpenAI API key';
+  const message = `No API key provided, nothing was analyzed and you were not charged. Add your ${keyHelp} in the "apiKey" input field and run again. / Falta la API key: no se analizó nada ni se cobró nada. Agrega tu ${provider === 'gemini' ? 'API key de Google Gemini (gratis en https://aistudio.google.com/apikey)' : 'API key de OpenAI'} en el campo "apiKey" y vuelve a ejecutar.`;
+  log.warning(message);
+  await Actor.setValue('OUTPUT', { status: 'API_KEY_MISSING', message, provider, reviewsReceived: Array.isArray(input.reviews) ? input.reviews.length : 0 });
+  await Actor.exit(message, { exitCode: 0, statusMessage: message });
+  process.exit(0);
+}
 
 // Load reviews
 const raw: any[] = [...(input.reviews ?? [])];
